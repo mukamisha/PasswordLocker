@@ -2,7 +2,7 @@ import unittest
 from Credentials import Credentials
 class TestUserCredentials(unittest.TestCase):
     def setUp(self):
-        self.new_user_credentials=Credentials("kevin","kv1",instagram)
+        self.new_user_credentials=Credentials("kevin","kv1","instagram")
 
     def test_init(self):
         """
@@ -21,19 +21,35 @@ class TestUserCredentials(unittest.TestCase):
 
         self.new_user_credentials.save_user_credentials() # saving the new details intered
         self.assertEqual(len(Credentials.credentials_list),1)
-  
 
-      def test_save_multiple_user_credentials(self):
+
+    def test_save_multiple_user_credentials(self):
         '''
         to check if we can save multiple user dredentials in our credential list
-        objects to our contact_list
+        objects to our credentials_list
         '''
-        self.new_contact.save_contact()
-        test_contact = Contact("Test","user","0712345678","test@user.com") # new contact
-        test_contact.save_contact()
-        self.assertEqual(len(Contact.contact_list),2)
+        self.new_user_credentials.save_user_credentials()
+        test_new_credentials = Credentials("evelyn","ev3","linkedin") # new credential
+        test_new_credentials.save_user_credentials()
+        self.assertEqual(len(Credentials.credentials_list),2)
 
+    def tearDown(self):
+            '''
+            for cleaning up after each test case .
+            '''
+            Credentials.credentials_list = []  
+            
+    def test_delete_contact(self):
+            '''
+            for deleting user accounts or credentials in need.
+            '''
+            self.new_user_credentials.save_user_credentials()
+            test_new_credentials = Credentials("umuhire","hu2","facebook",) # new credential
+            test_new_credentials.save_user_credentials()
+            self.new_user_credentials.delete_user_credentials()# Deleting a credential object
+            self.assertEqual(len(Credentials.credentials_list),1)
 
+    
 
 if __name__ == '__main__':
     unittest.main()

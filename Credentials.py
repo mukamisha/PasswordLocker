@@ -9,7 +9,7 @@ class Credentials:
 
         self.account_user_name = account_user_name
         self.password = password
-        self.socialMedia=accountName
+        self.accountName=accountName
        
 
     def save_user_credentials(self):
@@ -18,3 +18,5 @@ class Credentials:
         user_list
         '''
         Credentials.credentials_list.append(self)
+
+   )
