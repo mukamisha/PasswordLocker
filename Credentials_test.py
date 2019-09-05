@@ -26,7 +26,7 @@ class TestUserCredentials(unittest.TestCase):
     def test_save_multiple_user_credentials(self):
         '''
         to check if we can save multiple user dredentials in our credential list
-        objects to our credentials_list
+        
         '''
         self.new_user_credentials.save_user_credentials()
         test_new_credentials = Credentials("evelyn","ev3","linkedin") # new credential
