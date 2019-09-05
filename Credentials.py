@@ -24,3 +24,10 @@ class Credentials:
         deletes a user credentials in a credential list
         '''
         Credentials.credentials_list.remove(self)
+
+    @classmethod
+    def display_user_credentials(cls):
+        '''
+        method that returns the credential list
+        '''
+        return cls.credentials_list
