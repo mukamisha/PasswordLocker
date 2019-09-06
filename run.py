@@ -37,8 +37,8 @@ def main():
                 print("Enter your UserName:")
                 u_name=input()
 
-                # print("Enter your password")
-                # p_wrd=input()
+                print("Enter your password")
+                p_wrd=input()
 
                 # print("Enter your accountName")
                 # ac_name=input()
