@@ -34,8 +34,8 @@ def main():
                 print("New account")
                 print("-"*10)
 
-                # print("Enter your UserName:")
-                # u_name=input()
+                print("Enter your UserName:")
+                u_name=input()
 
                 # print("Enter your password")
                 # p_wrd=input()
