@@ -8,7 +8,7 @@ class TestUserDetails(unittest.TestCase):
         """
         to test if an object is initialised properly
         """
-        self.assertEqual(self.new_user_details.account_user_name,"sasa")
+        self.assertEqual(self.new_user_details.user_name,"sasa")
         self.assertEqual(self.new_user_details.password,"dada")
 
     def test_save_user_details(self):
