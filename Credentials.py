@@ -31,3 +31,14 @@ class Credentials:
         method that returns the credential list
         '''
         return cls.credentials_list
+
+    @classmethod
+    def check_user_credentials(cls,account_user_name,password):
+        '''
+        Method that checks if the name and password entered match entries in the users_list
+        '''
+        current_user_credentials = ''
+        for user in Credentials.credentials_list:
+            if (user.account_user_name == account_user_name and user.password == password):
+                current_user_credentials = user.user_name
+        return current_user_credentials
