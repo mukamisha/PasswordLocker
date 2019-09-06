@@ -28,7 +28,7 @@ class TestUserCredentials(unittest.TestCase):
         to check if we can save multiple user dredentials in our credential list
 
         '''
-        self.new_user_credentials.save_user_credentials()
+   a     self.new_user_credentials.save_user_credentials()
         test_new_credentials = Credentials("evelyn","ev3","linkedin") # new credential
         test_new_credentials.save_user_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)
@@ -39,7 +39,7 @@ class TestUserCredentials(unittest.TestCase):
             '''
             Credentials.credentials_list = []  
             
-    def test_delete_contact(self):
+    def test_delete_user_credentials(self):
             '''
             for deleting user accounts or credentials in need.
             '''
