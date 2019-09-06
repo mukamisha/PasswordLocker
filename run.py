@@ -40,8 +40,8 @@ def main():
                 print("Enter your password")
                 p_wrd=input()
 
-                # print("Enter your accountName")
-                # ac_name=input()
+                print("Enter your accountName")
+                ac_name=input()
 
                 # save_account(create_account(u_name,p_wrd,ac_name))
 
