@@ -9,3 +9,7 @@ this is a web application that helps you to keep all your account credentials , 
 	*UBUNTU.
 	*VISIO STUDIO CODE.	
     *GOOGLE CHROME
+## TECHNOLOGY USED:
+
+    * PYTHON.
+   
