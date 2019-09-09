@@ -56,19 +56,21 @@ class TestUserCredentials(unittest.TestCase):
 
         self.assertEqual(Credentials.display_user_credentials(),Credentials.credentials_list)
 
-    def test_check_user_credentials(self):
-        '''
-        Function to test whether the login in function check_user works as expected
-        '''
-        self.new_user_credentials = Credentials("kke","kevi345","kv&gmail.com")
-        self.new_user_credentials.save_user_credentials()
-        new_user = Credentials("hey","hi23","kv&gmail.com")
-        new_user.save_user_credentials()
-        for user in Credentials.credentials_list:
-            if user.account_user_name == new_user.account_user_name and user.password == new_user.password:
-                current_user = user.account_user_name
-        return current_user
-        self.assertEqual(current_user,Credentials.check_user_credentials(new_user.password,new_user.user_name))
+    # def test_check_user_credentials(self):
+    #     '''
+    #     Function to test whether the login in function check_user works as expected
+    #     '''
+    #     self.new_user_credentials = Credentials("kke","kevi345","kv&gmail.com")
+    #     self.new_user_credentials.save_user_credentials()
+    #     new_user = Credentials("hey","hi23","kv&gmail.com")
+    #     new_user.save_user_credentials()
+    #     for user in Credentials.credentials_list:
+    #         if user.account_user_name == new_user.account_user_name and user.password == new_user.password:
+    #             current_user = user.account_user_name
+    #     return current_user
+    #     self.assertEqual(current_user,Credentials.check_user_credentials(new_user.password,new_user.user_name))
+
+    
 
     
 

@@ -1,3 +1,7 @@
+from User import User
+import random
+import string
+
 class Credentials:
     """
     this class creates a new instance of a class user
@@ -32,13 +36,21 @@ class Credentials:
         '''
         return cls.credentials_list
 
+
+    def generate_password(size=5,char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
+        '''
+        Function to generate a password for the user
+        '''
+        paswrd_g=''.join(random.choice(char) for _ in range(size))
+        return paswrd_g
+
     @classmethod
-    def check_user_credentials(cls,account_user_name,password):
+    def check_user(cls,user_name,password):
         '''
         Method that checks if the name and password entered match entries in the users_list
         '''
-        current_user_credentials = ''
-        for user in Credentials.credentials_list:
-            if (user.account_user_name == account_user_name and user.password == password):
-                current_user_credentials = user.user_name
-        return current_user_credentials
+        current_user = ''
+        for x in User.user_list:
+            if (x.user_name == user_name and x.password == password):
+                current_user = x.user_name
+        return current_user
