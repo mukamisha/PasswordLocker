@@ -34,7 +34,7 @@ def generate_password():
 	'''
 	Function to generate a password for the user
 	'''
-	paswrd_g = Credential.generate_password()
+	paswrd_g = Credentials.generate_password()
 	return paswrd_g
 
 def save_user_credentials(credentials):
@@ -68,6 +68,7 @@ def main():
 
                     print("use the following short codes : CR - creating a new account,LG - to login, EXI - to exit")
                     short_code = input().upper()
+                    
                     if short_code == "EXI":
                         print("bye .......")
                         break
@@ -102,59 +103,60 @@ def main():
                         if user_exists == user_name:
                                 print("\n")
                                 print("please use those shortcodes to continue: ")
+                                
+                                print("-"*30)
+                                print("enter: AD - to create credential , DS - to display credential , DL - to delete crdential,EX - to exit the application ")
+                                short_code = input().upper()
 
+                                if short_code == 'EX':
+                                        print("bye....")
+                                        break
 
-                                while True:
-                                        print("-"*30)
-                                        print("enter: AD - to create credential , DS - to display credential , DL - to delete crdential,EX - to exit the application ")
+                                elif short_code == 'AD':
+                                        print('\n')
+                                        print("enter your credential account details:")
+                                        account_user_name = input("enter your account user name:")
+                                        account_name = input("enter your account name:") 
+                                        
+                                        print('\n')
+                                        print("select password option: AP - for the app to generate it for you , SEL - for yourself to generate it ")
+
                                         short_code = input().upper()
+                                        print("-"*50)
 
-                                        if short_code == 'EX':
-                                                print("bye....")
-                                                break
-
-                                        elif short_code == 'AD':
+                                        if short_code == 'AP':
                                                 print('\n')
-                                                print("enter your credential account details:")
-                                                account_user_name = input("enter your account user name:")
-                                                account_name = input("enter your account name:") 
+                                                password = generate_password()
+                                                # break
+                                        elif short_code == 'SEL':
+                                                print('\n')
+                                                password = input("enter your password:")
                                                 
-                                                while True:
+
+
+                                        else :
+                                                print("invalid input")
+
+                                        save_user_credentials(create_credentials_account(account_user_name,password,account_name))
+                                        print('\n')
+                                        print(f"credential account :{account_user_name} ,{password},{account_name} has been successfully created")
+                                        print('\n')
+
+                                elif short_code == 'DS':
+                                        if display_user_credentials():
+                                                print("here is your credentials's list:")
+                                                print('\n')
+
+                                                for cred in display_user_credentials():
+                                                        print(f"{account_user_name} ,{password},{account_name}")
                                                         print('\n')
-                                                        short_code = input().upper()
-                                                        print("select password option: AP - for the app to generate it for you , SEL - for yourself to generate it ")
-                                                        print("-"*50)
+                                                
+                                        else:
+                                                        print('\n')
+                                                        print("you don't seem to have any credential yet, please create one")
 
-                                                        if short_code == 'AP':
-                                                                print('\n')
-                                                                password = generate_password()
-                                                                break
-                                                        elif short_code == 'SEL':
-                                                                print('\n')
-                                                                password = input("enter your password")
-                                                                break
-
-                                                        else :
-                                                                print("invalid input")
-
-                                                save_user_credentials(create_credentials_account(account_user_name,password,account_name))
-                                                print('\n')
-                                                print(f"credential account :{account_user_name} ,{password},{account_name} has been successfully created")
-                                                print('\n')
-
-                                        # elif short_code == 'DS'
-
-
-
-
-
-
-
-
-
-                     
-
-                           
+                        else:
+                                print("invalid input!!")
 
 
 if __name__ == '__main__':
