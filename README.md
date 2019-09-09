@@ -26,3 +26,7 @@ this is a web application that helps you to keep all your account credentials , 
 ## This is my project link
 https://github.com/mukamisha/PasswordLocker
 
+## SUPPORT AND CONTACT 
+email:mukamishajacky97@gmail.com.
+## LISENCE
+lisenced by copyright@2019..
