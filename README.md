@@ -1,4 +1,4 @@
-# DelanieStudio
+# passwordlocker
 ### BY **JACKY**
 ## DESCRIPTION
 ### PasswordLock Application
